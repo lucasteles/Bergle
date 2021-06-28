@@ -4,7 +4,7 @@
 
 ## Banco de Dados para Gerenciamento de uma Faculdade
 
-### [Diagrama Entidade Relacionamento](https://app.diagrams.net/#HZaqueuCavalcante%2FDatabases%2Fmaster%2FFaculdadeManager)
+### [Diagrama Entidade Relacionamento](https://app.diagrams.net/#HZaqueuCavalcante%2Ffadmin%2Fmain%2FDocs%2FDiagramas.drawio)
 
 O objetivo do sistema é gerenciar:
 - Alunos
