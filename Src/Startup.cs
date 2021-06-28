@@ -23,7 +23,7 @@ namespace Fadmin
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "fadmin", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Src", Version = "v1" });
             });
         }
 
@@ -34,7 +34,7 @@ namespace Fadmin
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "fadmin v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Src v1"));
             }
 
             app.UseHttpsRedirection();
