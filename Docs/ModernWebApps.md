@@ -56,11 +56,22 @@ Entity Framework Core
 
 ## 7 - Testes
 
+### Unitários:
+    - Testam uma única parte do software.
+    - Não possuem dependências externas.
+    - Rodam extremamente rápido.
 
+### De Integração:
+    - Testam a integração entre duas ou mais partes do sistema.
+    - Possuem dependências externas e de infraestrutura.
 
+### Funcionais:
+    - São escritos a partir da perspectiva do usuário.
+    - Verificam a corretude do sistema baseado em seus requerimentos.
 
-
-
+### Organização dos Testes:
+    - Separar por tipo (Unitários, Integração, Funcionais)
+    - Organizar por Projeto e por Namespace
 
 
 
