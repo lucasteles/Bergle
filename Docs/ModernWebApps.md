@@ -50,11 +50,19 @@ Requests and Responses
 
 Domain Driven Design
 
-## 6 - Banco de Dados
+## 7 - Banco de Dados
 
 Entity Framework Core
 
-## 7 - Testes
+### DbContext:
+- Abstração do Banco de Dados
+- Possui **coleções** de entidades de negócio
+
+### Configuração:
+- Definir a ConnectionString
+- Definir o Banco de Dados (Provider)
+
+## 8 - Testes
 
 ### Unitários:
     - Testam uma única parte do software.
@@ -72,6 +80,8 @@ Entity Framework Core
 ### Organização dos Testes:
     - Separar por tipo (Unitários, Integração, Funcionais)
     - Organizar por Projeto e por Namespace
+
+## 8 - Azure
 
 
 
