@@ -12,9 +12,8 @@ O objetivo do sistema é gerenciar:
 - Turmas
 - Cursos
 - Disciplinas
-- Períodos / Semestres
-- Históricos Escolares
-- Provas
+- Semestres
+- Históricos
 - Projetos
 - Notas
 - Livros / Biblioteca
