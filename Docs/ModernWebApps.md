@@ -49,8 +49,19 @@ A arquitetura deve permitir que o sistema seja mantido e evoluído.
 - Aplicações que possuem uma única unidade de deploy.
 
 ### Clean Architecture
+- Utiliza o conceito de inversão de dependências para isolar as regras de negócio no centro da aplicação.
+- Core:
+    - Entities, Services, Interfaces, DTOs...
+- Infrastructure:   
+    - EF Core DbContext, Migrations, Configurations...
+    - Repository Pattern
+    - FileLogger or SmtpNotifier
+- User Interface:
+    - Controllers, ViewsModels, Startup...
 
 ### Docker
+- Torna possível deployar a aplicação como um container.
+- Aumenta a escalabilidade.
 
 ## 4 - Front-End
 
