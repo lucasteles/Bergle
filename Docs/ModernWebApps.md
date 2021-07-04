@@ -8,31 +8,49 @@
 
 
 
-## 2 - Princípios Arquiteturais
+## 3 - Princípios Arquiteturais
 
-Separação de Responsabilidades
+A arquitetura deve permitir que o sistema seja mantido e evoluído.
 
-Encapsulamento
+### Separação de Responsabilidades
+- O software deve ser separado de acordo com os tipos de ações que cada parte realiza (comportamento).
+- Exemplo: separar regras de negócio, banco de dados, infraestrutura, front-end...
 
-Inversão de Dependência
+### Encapsulamento
+- Esconder as implementações atrás de **interfaces bem definidas**.
+- Possibilita a alteração das implementações sem quebrar quem depende das interfaces.
+- Leva ao baixo acoplamento e a modularidade do sistema.
 
-Dependências Explícitas
+### Inversão de Dependência
+- Dependa de abstrações, não de implementações.
+- Possibilita o baixo acoplamento entre as partes do sistema.
+- Facilita a construção de testes.
 
-Responsabilidade Única
+### Dependências Explícitas
+- Deixar explícito quais são as dependências necessárias para performar determinada funcionalidade.
+- Definir nos construtores todas essas dependências, sendo honesto com os clientes.
 
-Don't Repeat Yourself (DRY)
+### Responsabilidade Única
+- Uma classe deve possuir apenas uma razão para mudar.
 
-Persistence Ignorance
+### Don't Repeat Yourself (DRY)
+- Reaproveitar código, evitar duplicidade.
 
-Contextos Delimitados (DDD)
+### Persistence Ignorance
+- Evitar que a tecnologia de armazenamento de dados influencie em objetos de negócio.
 
-## 3 - Arquiteturas
+### Contextos Delimitados (DDD)
+- Modelar o domínio utilizando sua linguagem ubíqua.
+- Separar os conceitos dentro de contextos, para facilitar o entendimento e a implementação.
 
-Monólitos
+## 4 - Arquiteturas
 
-Clean Architecture
+### Monólitos
+- Aplicações que possuem uma única unidade de deploy.
 
-Docker
+### Clean Architecture
+
+### Docker
 
 ## 4 - Front-End
 
