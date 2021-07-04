@@ -1,13 +1,11 @@
 using NUnit.Framework;
 
-namespace Unit
+namespace Tests.Unit
 {
     public class Tests
     {
         [SetUp]
-        public void Setup()
-        {
-        }
+        public void Setup() {}
 
         [Test]
         public void UnitTest()

@@ -125,19 +125,3 @@ INSERT INTO alunos (nome, sobrenome, cpf, email, curso_id, turma_id)
 VALUES
 	('Zaqueu', 'Cavalcante', '12345678910', 'zaqueudovale@gmail.com', 1, 1)
 ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

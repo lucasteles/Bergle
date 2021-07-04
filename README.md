@@ -1,6 +1,10 @@
 # Fadmin
 
-
+## Pendências
+- Como levar em conta a dinâmica temporal do sistema?
+- A cada semestre um novo ciclo recomeça
+- O que vai compor o histórico de um Aluno?
+- Um Professor vai possuir histórico também?
 
 ## Banco de Dados para Gerenciamento de uma Faculdade
 

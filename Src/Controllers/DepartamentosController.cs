@@ -15,7 +15,7 @@ namespace Fadmin.Controllers
             new Departamento {Id = 3, Nome = "Matemática"},
             new Departamento {Id = 4, Nome = "Artes"}
         };
- 
+
         public DepartamentosController() {}
 
         [HttpGet]
