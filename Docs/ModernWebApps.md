@@ -1,12 +1,16 @@
 # Architecting Modern Web Applications
 
-## 0 - Características de Aplicações Web Modernas
+## 1 - Características de Aplicações Web Modernas
 
+- Otimizadas para a Cloud e escaláveis.
+- Cross Platform.
+- Injeção de Dependências, Modularidade e Baixo Acoplamento.
+- Testes Automatizados.
+- Desenvolvimento e Deploy simples. CI/CD.
 
+## 2 - Single Page Applications
 
-## 1 - Apps Tradicionais *versus* SPAs
-
-
+SPAs possibilitam a criação de interfaces ricas em funcionalidades.
 
 ## 3 - Princípios Arquiteturais
 
@@ -63,7 +67,7 @@ A arquitetura deve permitir que o sistema seja mantido e evoluído.
 - Torna possível deployar a aplicação como um container.
 - Aumenta a escalabilidade.
 
-## 4 - Front-End
+## 5 - Front-End
 
 HTML
 
@@ -73,13 +77,15 @@ JavaScript
 
 Vue
 
-## 5 - MVC
+## 6 - MVC
 
 Requests and Responses
 
 Domain Driven Design
 
 ## 7 - Banco de Dados
+
+Dapper
 
 Entity Framework Core
 
@@ -110,7 +116,7 @@ Entity Framework Core
     - Separar por tipo (Unitários, Integração, Funcionais)
     - Organizar por Projeto e por Namespace
 
-## 8 - Azure
+## 9 - Azure
 
 
 

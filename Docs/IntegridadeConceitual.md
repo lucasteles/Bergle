@@ -1,7 +1,7 @@
 # Integridade Conceitual
 
 Integridade conceitual é a consideração mais importante no projeto de sistemas. 
-s
+
 É melhor um sistema omitir algumas funcionalidades e melhorias anômalas, de forma a oferecer um conjunto coerente de ideias, do que oferecer diversas ideias interessantes, mas independentes e descoordenadas.
 
 É o que torna um sistema consistente.
