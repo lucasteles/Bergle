@@ -69,11 +69,11 @@ A arquitetura deve permitir que o sistema seja mantido e evoluído.
 
 ## 5 - Front-End
 
-HTML
+HTML (Conteúdo)
 
-CSS
+CSS (Estilo)
 
-JavaScript
+JavaScript (Comportamento)
 
 Vue
 
