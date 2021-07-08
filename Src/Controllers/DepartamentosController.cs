@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Fadmin.Data;
 using Fadmin.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Fadmin.Controllers
 {
@@ -8,20 +10,18 @@ namespace Fadmin.Controllers
     [Route("[controller]")]
     public class DepartamentosController : ControllerBase
     {
-        private static readonly Departamento[] Departamentos = new[]
-        {
-            new Departamento {Id = 1, Nome = "Computação"},
-            new Departamento {Id = 2, Nome = "Física"},
-            new Departamento {Id = 3, Nome = "Matemática"},
-            new Departamento {Id = 4, Nome = "Artes"}
-        };
+        private readonly IDepartamentosRepo _departamentos;
 
-        public DepartamentosController() {}
+        public DepartamentosController(IConfiguration configuration)
+        {
+            _departamentos = new DepartamentosRepo(configuration);
+        }
 
         [HttpGet]
-        public IEnumerable<Departamento> Get()
+        public IEnumerable<Departamento> ObterTodos()
         {
-            return Departamentos;
+            var departamentos = _departamentos.ObterTodos();
+            return departamentos;
         }
     }
 }

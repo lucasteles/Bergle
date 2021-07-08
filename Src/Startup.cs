@@ -1,3 +1,4 @@
+using Fadmin.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ namespace Fadmin
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Src", Version = "v1" });
             });
+
+            services.AddScoped<IDepartamentosRepo, DepartamentosRepo>();
         }
 
         // Use this method to configure the HTTP request pipeline.
