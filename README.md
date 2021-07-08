@@ -6,6 +6,9 @@
 - O que vai compor o histórico de um Aluno?
 - Um Professor vai possuir histórico também?
 
+## Inspirações e fontes de dados
+- [USP](https://www5.usp.br/institucional/escolas-faculdades-e-institutos/)
+
 ## Banco de Dados para Gerenciamento de uma Faculdade
 
 ### [Diagrama Entidade Relacionamento](https://app.diagrams.net/#HZaqueuCavalcante%2Ffadmin%2Fmain%2FDocs%2FDiagramas.drawio)

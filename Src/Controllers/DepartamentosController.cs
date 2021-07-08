@@ -23,5 +23,26 @@ namespace Fadmin.Controllers
             var departamentos = _departamentos.ObterTodos();
             return departamentos;
         }
+
+        [HttpPost]
+        public int Inserir(Departamento departamento)
+        {
+            var linhasAfetadas = _departamentos.Inserir(departamento);
+            return linhasAfetadas;
+        }
+
+        [HttpPut("{id}")]
+        public int Atualizar(int id, Departamento departamento)
+        {
+            var linhasAfetadas = _departamentos.Atualizar(departamento);
+            return linhasAfetadas;
+        }
+
+        [HttpDelete("{id}")]
+        public int Deletar(int id)
+        {
+            var linhasAfetadas = _departamentos.Deletar(id);
+            return linhasAfetadas;
+        }
     }
 }
