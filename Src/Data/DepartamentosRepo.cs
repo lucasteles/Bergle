@@ -38,6 +38,28 @@ namespace Fadmin.Data
             }
         }
 
+        public Departamento Obter(int id)
+        {
+            using (IDbConnection dbConnection = _connection)
+            {
+                dbConnection.Open();
+
+                var sql = $@"
+                    SELECT
+                        id,
+                        nome
+                    FROM
+                        departamentos
+                    WHERE
+                        id = @Id
+                ";
+
+                var departamento = dbConnection.QueryFirstOrDefault<Departamento>(sql, new { Id = id });
+
+                return departamento;
+            }
+        }
+
         public int Inserir(Departamento departamento)
         {
             using (IDbConnection dbConnection = _connection)

@@ -18,10 +18,20 @@ namespace Fadmin.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Departamento> ObterTodos()
+        public ActionResult<IEnumerable<Departamento>> ObterTodos()
         {
             var departamentos = _departamentos.ObterTodos();
-            return departamentos;
+            return Ok(departamentos);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Departamento> ObterPorId(int id)
+        {
+            var departamento = _departamentos.Obter(id);
+
+            if (departamento is null) return NotFound();
+
+            return Ok(departamento);
         }
 
         [HttpPost]
