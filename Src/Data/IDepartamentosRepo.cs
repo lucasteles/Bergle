@@ -7,7 +7,7 @@ namespace Fadmin.Data
     {
         IEnumerable<Departamento> ObterTodos();
 
-        Departamento Obter(int id);
+        Departamento ObterPor(int id);
 
         int Inserir(Departamento departamento);
 

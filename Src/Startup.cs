@@ -27,6 +27,8 @@ namespace Fadmin
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Src", Version = "v1" });
             });
 
+            services.AddRouting(options => options.LowercaseUrls = true);
+
             services.AddScoped<IDepartamentosRepo, DepartamentosRepo>();
         }
 

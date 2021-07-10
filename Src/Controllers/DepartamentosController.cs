@@ -25,11 +25,12 @@ namespace Fadmin.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Departamento> ObterPorId(int id)
+        public ActionResult<Departamento> ObterPor(int id)
         {
-            var departamento = _departamentos.Obter(id);
+            var departamento = _departamentos.ObterPor(id);
 
-            if (departamento is null) return NotFound();
+            if (departamento is null)
+                return NotFound();
 
             return Ok(departamento);
         }

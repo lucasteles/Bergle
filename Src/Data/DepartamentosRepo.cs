@@ -38,7 +38,7 @@ namespace Fadmin.Data
             }
         }
 
-        public Departamento Obter(int id)
+        public Departamento ObterPor(int id)
         {
             using (IDbConnection dbConnection = _connection)
             {
