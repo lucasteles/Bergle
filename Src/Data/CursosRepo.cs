@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using Dapper;
 using Fadmin.Domain;
 using Microsoft.Extensions.Configuration;
@@ -27,24 +26,13 @@ namespace Fadmin.Data
 
                 var sql = $@"
                     SELECT
-                        curso.id,
-                        curso.nome,
-                        departamento.id,
-                        departamento.nome
+                        id,
+                        nome
                     FROM
-                        cursos curso
-                    LEFT JOIN
-                        departamentos departamento ON curso.departamento_id = departamento.id
+                        cursos
                 ";
 
-                var cursos = dbConnection.Query<Curso, Departamento, Curso>(sql, 
-                    (curso, departamento) => 
-                    {
-                        curso.Departamento = departamento;
-                        return curso;
-                    },
-                    splitOn: "id, id"
-                );
+                var cursos = dbConnection.Query<Curso>(sql);
 
                 return cursos;
             }
@@ -58,27 +46,15 @@ namespace Fadmin.Data
 
                 var sql = $@"
                     SELECT
-                        curso.id,
-                        curso.nome,
-                        departamento.id,
-                        departamento.nome
+                        id,
+                        nome
                     FROM
-                        cursos curso
-                    LEFT JOIN
-                        departamentos departamento ON curso.departamento_id = departamento.id
+                        cursos
                     WHERE
-                        curso.id = @Id
+                        id = @Id
                 ";
 
-                var curso = dbConnection.Query<Curso, Departamento, Curso>(sql, 
-                    (curso, departamento) => 
-                    {
-                        curso.Departamento = departamento;
-                        return curso;
-                    },
-                    new { Id = id },
-                    splitOn: "id, id"
-                ).FirstOrDefault();
+                var curso = dbConnection.QueryFirstOrDefault<Curso>(sql, new { Id = id });
 
                 return curso;
             }
@@ -92,27 +68,15 @@ namespace Fadmin.Data
 
                 var sql = $@"
                     SELECT
-                        curso.id,
-                        curso.nome,
-                        departamento.id,
-                        departamento.nome
+                        id,
+                        nome
                     FROM
-                        cursos curso
-                    LEFT JOIN
-                        departamentos departamento ON curso.departamento_id = departamento.id
+                        cursos
                     WHERE
-                        departamento.id = @Id
+                        departamento_id = @Id
                 ";
 
-                var cursos = dbConnection.Query<Curso, Departamento, Curso>(sql, 
-                    (curso, departamento) => 
-                    {
-                        curso.Departamento = departamento;
-                        return curso;
-                    },
-                    new { Id = id },
-                    splitOn: "id, id"
-                );
+                var cursos = dbConnection.Query<Curso>(sql, new { Id = id });
 
                 return cursos;
             }

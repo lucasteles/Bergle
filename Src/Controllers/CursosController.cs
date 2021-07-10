@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Fadmin.Data;
 using Fadmin.Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,11 @@ namespace Fadmin.Controllers
         public ActionResult<IEnumerable<Curso>> ObterTodos()
         {
             var cursos = _cursos.ObterTodos();
-            return Ok(cursos);
+     
+            if (cursos.Any())
+                return Ok(cursos);
+            
+            return NotFound();
         }
 
         [HttpGet("{id}")]
@@ -40,7 +45,11 @@ namespace Fadmin.Controllers
         public ActionResult<IEnumerable<Curso>> ObterPorDepartamento(int id)
         {
             var cursos = _cursos.ObterPorDepartamento(id);
-            return Ok(cursos);
+
+            if (cursos.Any())
+                return Ok(cursos);
+            
+            return NotFound();
         }
     }
 }

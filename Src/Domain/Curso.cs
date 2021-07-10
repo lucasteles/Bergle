@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Fadmin.Domain
 {
     public class Curso
@@ -7,5 +9,7 @@ namespace Fadmin.Domain
         public string Nome { get; set; }
 
         public Departamento Departamento { get; set; }
+
+        public List<Disciplina> Disciplinas { get; set; }
     }
 }
