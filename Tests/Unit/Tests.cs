@@ -1,3 +1,4 @@
+using Fadmin.Domain;
 using NUnit.Framework;
 
 namespace Tests.Unit
@@ -8,9 +9,13 @@ namespace Tests.Unit
         public void Setup() {}
 
         [Test]
-        public void UnitTest()
+        public void StupidUnitTest()
         {
-            Assert.True(true);
+            var disciplina = new Disciplina();
+
+            disciplina.CargaHoraria = 50;
+
+            Assert.AreEqual(50, disciplina.CargaHoraria);
         }
     }
 }

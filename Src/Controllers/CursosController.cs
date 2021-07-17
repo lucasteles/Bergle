@@ -39,17 +39,5 @@ namespace Fadmin.Controllers
 
             return Ok(curso);
         }
-
-        [HttpGet]
-        [Route("departamento/{id}")]
-        public ActionResult<IEnumerable<Curso>> ObterPorDepartamento(int id)
-        {
-            var cursos = _cursos.ObterPorDepartamento(id);
-
-            if (cursos.Any())
-                return Ok(cursos);
-            
-            return NotFound();
-        }
     }
 }

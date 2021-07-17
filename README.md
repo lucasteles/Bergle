@@ -1,5 +1,19 @@
 # Fadmin
 
+DDD, TDD, SOLID, POO, UML, CI/CD, Agile, XP, Design Patterns, Clean Code, Refactoring, Clean Architecture, Software Design...
+
+Sobre o conteúdo, https://teachyourselfcs.com/
+
+1 - Programming
+2 - Computer Architecture
+3 - Algorithms and Data Structures
+4 - Math for Computer Science
+5 - Operating Systems
+6 - Computer Networks
+7 - Databases
+8 - Compilers
+9 - Distributed Systems
+
 ## Pendências
 - Como levar em conta a dinâmica temporal do sistema?
 - A cada semestre um novo ciclo recomeça
@@ -94,3 +108,4 @@ Fases do Projeto:
 	
 ## Referências
 - [Curso de Modelagem de Dados - Bóson Treinamentos](https://www.youtube.com/playlist?list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)
+- [Curso de Vue.js](https://www.youtube.com/watch?v=ArC_Tfmgfb0&list=WL&index=2)

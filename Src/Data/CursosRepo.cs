@@ -59,27 +59,5 @@ namespace Fadmin.Data
                 return curso;
             }
         }
-
-        public IEnumerable<Curso> ObterPorDepartamento(int id)
-        {
-            using (IDbConnection dbConnection = _connection)
-            {
-                dbConnection.Open();
-
-                var sql = $@"
-                    SELECT
-                        id,
-                        nome
-                    FROM
-                        cursos
-                    WHERE
-                        departamento_id = @Id
-                ";
-
-                var cursos = dbConnection.Query<Curso>(sql, new { Id = id });
-
-                return cursos;
-            }
-        }
     }
 }

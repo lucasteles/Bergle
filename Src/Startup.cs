@@ -1,4 +1,3 @@
-using Fadmin.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,8 +26,6 @@ namespace Fadmin
             });
 
             services.AddRouting(options => options.LowercaseUrls = true);
-
-            services.AddScoped<IDepartamentosRepo, DepartamentosRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

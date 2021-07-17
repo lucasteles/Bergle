@@ -65,57 +65,5 @@ namespace Fadmin.Data
                 return disciplina;
             }
         }
-
-        public IEnumerable<Disciplina> ObterPorDepartamento(int id)
-        {
-            using (IDbConnection dbConnection = _connection)
-            {
-                dbConnection.Open();
-
-                var sql = $@"
-                    SELECT
-                        id,
-                        nome,
-                        descricao,
-                        carga_horaria
-                    FROM
-                        disciplinas
-                    WHERE
-                        departamento_id = @Id
-                ";
-
-                var disciplinas = dbConnection.Query<Disciplina>(sql, new { Id = id });
-
-                return disciplinas;
-            }
-        }
-
-        public IEnumerable<Disciplina> ObterPorCurso(int id)
-        {
-            using (IDbConnection dbConnection = _connection)
-            {
-                dbConnection.Open();
-
-                var sql = $@"
-                    SELECT
-                        disciplina.id,
-                        disciplina.nome,
-                        disciplina.descricao,
-                        disciplina.carga_horaria
-                    FROM
-                        disciplinas disciplina
-                    INNER JOIN 
-                        cursos_disciplinas cd ON cd.disciplina_id = id
-                    INNER JOIN
-                        cursos curso ON curso.id = cd.curso_id
-                    WHERE
-                        curso.id = @Id;
-                ";
-
-                var disciplinas = dbConnection.Query<Disciplina>(sql, new { Id = id });
-
-                return disciplinas;
-            }
-        }
     }
 }

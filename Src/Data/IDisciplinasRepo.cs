@@ -8,9 +8,5 @@ namespace Fadmin.Data
         IEnumerable<Disciplina> ObterTodas();
 
         Disciplina ObterPor(int id);
-
-        IEnumerable<Disciplina> ObterPorDepartamento(int id);
-
-        IEnumerable<Disciplina> ObterPorCurso(int id);
     }
 }
