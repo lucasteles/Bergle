@@ -1,6 +1,6 @@
 # The Design of Web APIs
 
-Part 1 - Fundamentals of API Design
+# Part 1 - Fundamentals of API Design
 
 ## 1 - What is API Design?
 
@@ -19,14 +19,27 @@ Part 1 - Fundamentals of API Design
 
 ## 2 - Designing an API for its users
 
+Uma API é feita para seus usuários usarem e atingirem seus objetivos.
+
+Seu design deve ser feito a partir do ponto de vista de seus consumidores.
+
+Focar no que os usuários podem fazer, não em como isso vai ser feito.
+
+Princípios:
+    - Quem são os usuários?
+    - O que os usuários podem fazer?
+    - Como eles podem fazer?
+    - Quais inputs são necessários? De onde vem?
+    - Quais são os possíveis outputs? Onde são usados?
+
+The API goals canvas.
+
+# Part 2 - Usable API Design
 
 
-Part 2 - Usable API Design
 
 
-
-
-Part 3 - Contextual API Design
+# Part 3 - Contextual API Design
 
 
 
