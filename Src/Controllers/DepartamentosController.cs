@@ -35,6 +35,20 @@ namespace Fadmin.Controllers
             return Ok(departamento);
         }
 
+        [HttpGet("{id}/cursos")]
+        public ActionResult<IEnumerable<Curso>> ObterTodosOsCursosDoDepartamento(int id)
+        {
+            var cursos = new List<Curso>();
+            return Ok(cursos);
+        }
+
+        [HttpGet("{id}/disciplinas")]
+        public ActionResult<IEnumerable<Disciplina>> ObterTodasAsDisciplinasDoDepartamento(int id)
+        {
+            var disciplinas = new List<Disciplina>();
+            return Ok(disciplinas);
+        }
+
         [HttpPost]
         public int Inserir(Departamento departamento)
         {

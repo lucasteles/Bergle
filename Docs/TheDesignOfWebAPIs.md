@@ -34,6 +34,23 @@ Princípios:
 
 The API goals canvas.
 
+## 3 - Designing a programming interface
+
+REST:
+    - Resources
+    - Actions
+    - Parameters
+    - Returns
+    - Paths
+
+CRUD Operations
+
+## 4 - 
+
+
+
+
+
 # Part 2 - Usable API Design
 
 
