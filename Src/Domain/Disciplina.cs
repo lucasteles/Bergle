@@ -15,10 +15,6 @@ namespace Fadmin.Domain
 
         public int CargaHoraria { get; set; }
 
-        public Departamento Departamento { get; set; }
-
-        public List<Curso> Cursos { get; set; }
-
         public List<Disciplina> PreRequisitos { get; set; }
 
         public Disciplina()

@@ -53,10 +53,10 @@ A arquitetura deve permitir que o sistema seja mantido e evoluído.
 - Aplicações que possuem uma única unidade de deploy.
 
 ### Clean Architecture
-- Utiliza o conceito de inversão de dependências para isolar as regras de negócio no centro da aplicação.
+- Utiliza o conceito de **inversão de dependências** para isolar as regras de negócio no centro da aplicação.
 - Core:
     - Entities, Services, Interfaces, DTOs...
-- Infrastructure:   
+- Infrastructure:
     - EF Core DbContext, Migrations, Configurations...
     - Repository Pattern
     - FileLogger or SmtpNotifier
@@ -75,27 +75,54 @@ CSS (Estilo)
 
 JavaScript (Comportamento)
 
-Vue
+Vue (Junta todos os 3)
 
 ## 6 - MVC
 
-Requests and Responses
+Requests and Responses:
+    - Middlewares
 
-Domain Driven Design
+Security:
+    - ASP.NET Core Identity
+    - Suporte para cadastro de usuários, login, recuperação de senha...
+    
+Authentication:
+    - JWT bearer tokens
+    - Identity Server
+
+Authorization:
+    - Restrição de acesso
+    - Claims
+
+Deployment:
+    - Reverse proxy servers
+    - Kestrel
+    - Docker Containers
 
 ## 7 - Banco de Dados
 
-Dapper
+### EF Core:
+    - DbContext:
+        - Classe que abstrai tabelas do banco as representando como coleções.
+        - Essas coleções são DbSets.
+    - Configuration:
+        - Configurar como o EF Core deve ser comportar.
+        - Usar o método Startup.ConfigureServices()
+    - Features:
+        - Change Tracking
+        - Eager Loading
+        - Explicit Loading
+        - Lazy Loading
+        - Entity Support
+        - Connection Resiliency
+        - Migrations
 
-Entity Framework Core
+### Dapper:
+    - Raw SQL
+    - Performace
 
-### DbContext:
-- Abstração do Banco de Dados
-- Possui **coleções** de entidades de negócio
-
-### Configuração:
-- Definir a ConnectionString
-- Definir o Banco de Dados (Provider)
+### Caching:
+    - Response Caching Middleware
 
 ## 8 - Testes
 
@@ -118,10 +145,7 @@ Entity Framework Core
 
 ## 9 - Azure
 
-
-
-
-
+CI/CD Pipelines
 
 ## Referências
 - [Architect Modern Web Applications with ASP.NET Core and Azure](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/)
