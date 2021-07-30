@@ -1,18 +1,31 @@
 # Fadmin
 
-DDD, TDD, SOLID, POO, UML, CI/CD, Agile, XP, Design Patterns, Clean Code, Refactoring, Clean Architecture, Software Design...
+Nesse projeto pretendo aplicar um pouco de cada um desses tópicos:
+
+	- DDD
+	- TDD
+	- SOLID
+	- POO
+	- CI/CD
+	- Agile
+	- XP
+	- Design Patterns
+	- Clean Code
+	- Refactoring
+	- Software Design
+	- Arquitetura de Software
 
 Sobre o conteúdo, https://teachyourselfcs.com/
 
-1 - Programming
-2 - Computer Architecture
-3 - Algorithms and Data Structures
-4 - Math for Computer Science
-5 - Operating Systems
-6 - Computer Networks
-7 - Databases
-8 - Compilers
-9 - Distributed Systems
+	1 - Programming
+	2 - Computer Architecture
+	3 - Algorithms and Data Structures
+	4 - Math for Computer Science
+	5 - Operating Systems
+	6 - Computer Networks
+	7 - Databases
+	8 - Compilers
+	9 - Distributed Systems
 
 ## Pendências
 - Como levar em conta a dinâmica temporal do sistema?
