@@ -4,7 +4,7 @@ Dapper é um Micro ORM feito pelo time do StackOverflow.
 
 Faz o **mapeamento** entre queries e objetos.
 
-Banco de Dados => SQL + Dapper => Objeto C#
+Banco de Dados <>=> SQL + Dapper <>=> Objeto C#
 
 Altamente performático.
 

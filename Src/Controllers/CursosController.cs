@@ -22,7 +22,7 @@ namespace Fadmin.Controllers
         public ActionResult<IEnumerable<Curso>> ObterTodos()
         {
             var cursos = _cursos.ObterTodos();
-     
+
             if (cursos.Any())
                 return Ok(cursos);
             
@@ -38,13 +38,6 @@ namespace Fadmin.Controllers
                 return NotFound();
 
             return Ok(curso);
-        }
-
-        [HttpGet("{id}/disciplinas")]
-        public ActionResult<IEnumerable<Disciplina>> ObterTodasAsDisciplinasDoCurso(int id)
-        {
-            var disciplinas = new List<Disciplina>();
-            return Ok(disciplinas);
         }
     }
 }

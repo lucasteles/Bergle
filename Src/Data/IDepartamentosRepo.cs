@@ -8,11 +8,5 @@ namespace Fadmin.Data
         IEnumerable<Departamento> ObterTodos();
 
         Departamento ObterPor(int id);
-
-        int Inserir(Departamento departamento);
-
-        int Atualizar(Departamento departamento);
-
-        int Deletar(int id);
     }
 }

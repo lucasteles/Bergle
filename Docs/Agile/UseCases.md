@@ -23,7 +23,6 @@
 - Professor
 - Coordenador
 - Diretor
-- Administrador (têm acesso à tudo)
 
 ## Alunos
 
