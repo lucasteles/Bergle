@@ -1,10 +1,8 @@
 # Testes
 
-Unitários
+## Unitários
 
-Integração
+## Integração
 
-Funcionais
-
-
+## Funcionais
 

@@ -51,3 +51,4 @@ Cada **Aluno** *possui* um **Histórico**, onde é possível *ver* quais **Disci
 - [Curso de Modelagem de Dados - Bóson Treinamentos](https://www.youtube.com/playlist?list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)
 - [Curso de Vue.js](https://www.youtube.com/watch?v=ArC_Tfmgfb0&list=WL&index=2)
 - [Ciência da Computação](https://teachyourselfcs.com/)
+- [Dotnet Core Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap)
