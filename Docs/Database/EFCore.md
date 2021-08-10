@@ -6,10 +6,34 @@
 
 ## 1 - Introduction to EF Core
 
-
-
+Tabelas <=> LINQ + EF Core + SQL <=> Objetos
 
 ## 2 - Querying the database
+
+- Relacionamentos:
+    - One-to-one, one-to-many, and many-to-many
+    - Owned Type class
+    - Table splitting
+    - Table per hierarchy
+    - Table per type
+
+- Migrations:
+    - Microsoft.EntityFrameworkCore.Tools
+    - Quando são feitas mudanças no código, o banco pode ser facilmente atualizado via migrations.
+
+- Buscando dados relacionados:
+    - Eager loading
+    - Explicit loading
+    - Select loading
+    - Lazy loading
+
+- Subqueries:
+    - 
+
+
+
+
+
 
 
 ## 3 - Changing the database content
@@ -20,6 +44,13 @@
 
 
 ## 5 - Using EF Core in ASP.NET Core Web Apps
+
+
+
+
+
+
+
 
 ## Part 2 - EF in Depth
 

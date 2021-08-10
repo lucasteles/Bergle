@@ -1,4 +1,4 @@
-# Fadmin
+# Bergle
 
 ## 0 - Sim, isso é um monte de CRUD
 
@@ -6,13 +6,11 @@ Só que bem feito.
 
 ## 1 - Pra quê serve?
 
-Esse sistema serve para gerenciar uma faculdade hipotética, onde não há provas nem notas.
-
-Nela, o objetivo final não é obter um diploma, mas sim adquirir conhecimento e aplicá-lo no desenvolvimento de projetos ao longo da graduação.
+Para exposição, avaliação e venda de livros.
 
 ## 2 - Por quê fiz?
 
-Para tentar aplicar na prática um pouco de cada um desses tópicos:
+Para tentar aplicar na prática um pouco de cada um desses tópicos/conceitos:
 
 	- Escrita de casos de uso efetivos
 	- Técnicas de refatoração de código
@@ -33,19 +31,29 @@ Para tentar aplicar na prática um pouco de cada um desses tópicos:
 O princípio básico seguido ao longo de todo o projeto é: 
 > *Manter as coisas simples*.
 
-A **Faculdade** é *formada* por **Departamentos**.
+Um **Livro** *possui* um ou mais **Autores**.
 
-Cada **Departamento** é responsável por *gerenciar* **Cursos** e **Disciplinas**.
+Um **Autor** pode *ter escrito* um ou mais **Livros**.
 
-Cada **Curso** é *formado* por um conjunto de **Disciplinas**.
+Um **Livro** pode *pertencer* a uma ou mais **Categorias**.
 
-Um **Aluno** deve *estar matriculado* em um **Curso** e *pertencer* à uma **Turma**.
+Um **Livro** pode *ter* nenhuma, uma ou mais **Avaliações**, feitas por **Leitores**.
 
-Um **Professor** *pertence* à um **Departamento** e pode *ministrar* uma ou mais **Disciplinas**.
+Cada **Avaliação** é *composta* por uma **Nota** (de 1 a 5 estrelas) e por uma **Descrição**.
 
-Para *concluir* um **Disciplina**, um **Aluno** deve *fazer* um ou mais **Projetos** relacionados à ela ao longo do **Semestre**.
+Um **Leitor** pode *comprar* um ou mais **Livros**, dentro de um **Pedido**.
 
-Cada **Aluno** *possui* um **Histórico**, onde é possível *ver* quais **Disciplinas** (e consequentemente **Projetos**) já foram *concluídas* por ele.
+Um **Livro** *possui* um **Preço Normal** e eventualmente um **Preço Promocional**.
+
+Um **Leitor** pode *consultar* os livros que já comprou ou que deseja comprar em sua **Prateleira**.
+
+## 4 - Consultas básicas
+
+- Qual a avaliação média de um determinado livro?
+
+- Qual o melhor livro da categoria tal?
+
+- Qual o melhor livro do autor tal?
 
 ## Referências
 - [Curso de Modelagem de Dados - Bóson Treinamentos](https://www.youtube.com/playlist?list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)
