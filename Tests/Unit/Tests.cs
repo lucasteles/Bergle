@@ -9,7 +9,7 @@ namespace Tests.Unit
         public void Setup() {}
 
         [Test]
-        public void NaoDeveAtualizarACargaHoraria()
+        public void TesteSemSentido()
         {
             // Arrange
             var livro = new Livro()
