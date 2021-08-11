@@ -45,7 +45,7 @@ Um **Leitor** pode *comprar* um ou mais **Livros**, dentro de um **Pedido**.
 
 Um **Livro** *possui* um **Preço Normal** e eventualmente um **Preço Promocional**.
 
-Um **Leitor** pode *consultar* os livros que já comprou ou que deseja comprar em sua **Prateleira**.
+Um **Leitor** pode *consultar* os livros que já comprou ou que deseja comprar em sua **Estante**.
 
 ## 4 - Consultas básicas
 
@@ -54,6 +54,21 @@ Um **Leitor** pode *consultar* os livros que já comprou ou que deseja comprar e
 - Qual o melhor livro da categoria tal?
 
 - Qual o melhor livro do autor tal?
+
+## 5 - Novas Features (manter a integridade conceitual)
+
+- Possibilitar que **Leitores** possam revender seus livros (sebo)
+- Criação de **Grupos de Leitura**, para discusão sobre um **Livro** ou **Autor**.
+
+## 6 - Sistemas 'análogos'
+
+- [Saraiva](https://www.saraiva.com.br/)
+- [Estante Virtual](https://www.estantevirtual.com.br/)
+- [Traça](https://www.traca.com.br/)
+- [Livraria Cultura](https://www3.livrariacultura.com.br/)
+- [Travessa](https://www.travessa.com.br/)
+- []()
+- []()
 
 ## Referências
 - [Curso de Modelagem de Dados - Bóson Treinamentos](https://www.youtube.com/playlist?list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)

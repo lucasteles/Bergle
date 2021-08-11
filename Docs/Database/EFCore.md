@@ -19,7 +19,7 @@ Tabelas <=> LINQ + EF Core + SQL <=> Objetos
 
 - Migrations:
     - Microsoft.EntityFrameworkCore.Tools
-    - Quando são feitas mudanças no código, o banco pode ser facilmente atualizado via migrations.
+    - Quando são feitas mudanças no código, o banco pode ser facilmente atualizado via migrations
 
 - Buscando dados relacionados:
     - Eager loading
@@ -27,16 +27,9 @@ Tabelas <=> LINQ + EF Core + SQL <=> Objetos
     - Select loading
     - Lazy loading
 
-- Subqueries:
-    - 
-
-
-
-
-
-
-
 ## 3 - Changing the database content
+
+
 
 
 ## 4 - Using EF Core in business logic

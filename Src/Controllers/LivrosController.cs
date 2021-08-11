@@ -10,7 +10,7 @@ namespace Bergle.Controllers
     [Route("[controller]")]
     public class LivrosController : ControllerBase
     {
-        private readonly ILivrosRepo _livros;
+        private readonly LivrosRepo _livros;
 
         public LivrosController(IConfiguration configuration)
         {

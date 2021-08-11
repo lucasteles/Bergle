@@ -20,7 +20,7 @@ namespace Tests.Unit
 
             // Act
             livro.Ler();
-            
+
             // Assert
             Assert.That(livro.FoiLido());
         }

@@ -7,7 +7,7 @@ using Npgsql;
 
 namespace Bergle.Data
 {
-    public class LivrosRepo : ILivrosRepo
+    public class LivrosRepo
     {
         private readonly IDbConnection _connection;
 
