@@ -20,8 +20,7 @@ namespace Bergle.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Livro>> ObterTodos()
         {
-            var livros = _livros.ObterTodos();
-            return Ok(livros);
+            return Ok(_livros.ObterTodos());
         }
     }
 }

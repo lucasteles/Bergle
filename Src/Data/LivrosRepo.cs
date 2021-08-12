@@ -24,17 +24,9 @@ namespace Bergle.Data
             {
                 dbConnection.Open();
 
-                var sql = $@"
-                    SELECT
-                        id,
-                        titulo
-                    FROM
-                        livros
-                ";
+                var sql = $@"SELECT * FROM livros";
 
-                var livros = dbConnection.Query<Livro>(sql);
-
-                return livros;
+                return dbConnection.Query<Livro>(sql);
             }
         }
     }

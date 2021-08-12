@@ -6,7 +6,7 @@ Só que bem feito.
 
 ## 1 - Pra quê serve?
 
-Para exposição, avaliação e venda de livros.
+?
 
 ## 2 - Por quê fiz?
 
@@ -41,11 +41,9 @@ Um **Livro** pode *ter* nenhuma, uma ou mais **Avaliações**, feitas por **Leit
 
 Cada **Avaliação** é *composta* por uma **Nota** (de 1 a 5 estrelas) e por uma **Descrição**.
 
-Um **Leitor** pode *comprar* um ou mais **Livros**, dentro de um **Pedido**.
+O **ISBN** é um sistema internacional de identificação de livros e softwares que utiliza números para classificá-los por **Título**, **Autor**, **País**, **Editora** e **Edição**.
 
-Um **Livro** *possui* um **Preço Normal** e eventualmente um **Preço Promocional**.
 
-Um **Leitor** pode *consultar* os livros que já comprou ou que deseja comprar em sua **Estante**.
 
 ## 4 - Consultas básicas
 

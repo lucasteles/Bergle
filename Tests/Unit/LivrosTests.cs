@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Tests.Unit
 {
-    public class Tests
+    public class LivrosTests
     {
         [SetUp]
         public void Setup() {}
@@ -14,7 +14,7 @@ namespace Tests.Unit
             // Arrange
             var livro = new Livro()
             {
-                Id = 42,
+                ISBN = new ISBN("978-8-550-80065-3"),
                 Titulo = "O Guia do Mochileiro das Galáxias"
             };
 

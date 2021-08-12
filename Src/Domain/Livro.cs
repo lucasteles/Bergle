@@ -2,7 +2,7 @@ namespace Bergle.Domain
 {
     public class Livro
     {
-        public int Id { get; set; }
+        public ISBN ISBN { get; set; }
 
         public string Titulo { get; set; }
 
