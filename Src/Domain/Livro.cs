@@ -1,26 +1,22 @@
+using System;
+using System.Collections.Generic;
+
 namespace Bergle.Domain
 {
     public class Livro
     {
-        public ISBN ISBN { get; set; }
+        public int Id { get; set; }
 
         public string Titulo { get; set; }
 
-        private bool _lido;
+        public DateTime DataDePublicacao { get; set; }
 
-        public void Ler()
-        {
-            var page = 0;
-            while (page < 442)
-            {
-                page++;
-            }
-            _lido = true;
-        }
+        public IList<Autor> Autores { get; set; }
 
-        public bool FoiLido()
-        {
-            return _lido;
-        }
+        public IList<Categoria> Categorias { get; set; }
+
+        public IList<Review> Reviews { get; set; }
+
+        public IList<Leitor> Leitores { get; set; }
     }
 }

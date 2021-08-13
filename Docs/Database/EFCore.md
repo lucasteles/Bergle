@@ -29,6 +29,31 @@ Tabelas <=> LINQ + EF Core + SQL <=> Objetos
 
 ## 3 - Changing the database content
 
+- State:
+    - Propriedade de entidades
+    - Como acessar: context.Entry(someEntityInstance).State
+    - Diz ao EF Core o que fazer com a entidade quando o SaveChanges() é chamado
+    - Possíveis valores:
+        - Added: a entidade deve ser criada no banco
+        - Unchanged: a entidade não mudou, ignorar
+        - Modified: a entidade existe no banco e foi mudada, fazer o update
+        - Deleted: deletar entidade no banco
+        - Detached: a entidade não tá sendo trackeada pelo EF
+
+- Criando e atualizando registros
+
+
+- Atualizando entidades com relacionamentos
+
+
+- Deletando entidades
+
+
+
+
+
+
+
 
 
 

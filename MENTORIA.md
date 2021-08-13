@@ -1,6 +1,6 @@
 # Mentoria
 
-# 00 - 09/08/2021
+# 00 - 12/08/2021
 
 - Como definir o escopo da aplicação?
 
@@ -9,7 +9,6 @@
 
 
 - Usar EF Core? Usar o Dapper?
-    - Dá pra fazer as coisas com o EF e depois refatorar (se necessário) pra raw queries
 
 
 - Como obter dados pra teste?

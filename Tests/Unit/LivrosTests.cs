@@ -14,15 +14,13 @@ namespace Tests.Unit
             // Arrange
             var livro = new Livro()
             {
-                ISBN = new ISBN("978-8-550-80065-3"),
+                Id = 42,
                 Titulo = "O Guia do Mochileiro das Galáxias"
             };
 
             // Act
-            livro.Ler();
 
             // Assert
-            Assert.That(livro.FoiLido());
         }
     }
 }
