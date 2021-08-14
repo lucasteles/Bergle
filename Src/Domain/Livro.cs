@@ -15,8 +15,8 @@ namespace Bergle.Domain
 
         public IList<Categoria> Categorias { get; set; }
 
-        public IList<Review> Reviews { get; set; }
-
         public IList<Leitor> Leitores { get; set; }
+
+        public IList<Review> Reviews { get; set; }
     }
 }

@@ -21,7 +21,13 @@ namespace Bergle.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Livro>> ObterTodos()
         {
-            var livros = context.Livros.AsNoTracking().ToList();
+            var livros = context.Livros
+                .AsNoTracking()
+                .Include(l => l.Autores)
+                .Include(l => l.Categorias)
+                .Include(l => l.Leitores)
+                .Include(l => l.Reviews)
+                .ToList();
             return Ok(livros);
         }
     }

@@ -1,3 +1,4 @@
+using static System.Text.Json.Serialization.ReferenceHandler;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,8 +19,9 @@ namespace Bergle
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            
+            services.AddControllers()
+                .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = Preserve);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Src", Version = "v1" });
