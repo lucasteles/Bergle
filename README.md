@@ -6,7 +6,7 @@ Só que bem feito.
 
 ## 1 - Pra quê serve?
 
-?
+Esse sistema possibilita que leitores organizem livros e façam reviews deles.
 
 ## 2 - Por quê fiz?
 
