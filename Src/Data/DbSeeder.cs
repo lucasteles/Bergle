@@ -8,7 +8,7 @@ namespace Bergle.Data
     {
         public static bool SemearBanco()
         {
-            using (var db = new AppContext())
+            using (var db = new BergleContext())
             {
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
@@ -20,7 +20,7 @@ namespace Bergle.Data
             return true;
         }
 
-        public static void AdicionarLivros(this AppContext db)
+        public static void AdicionarLivros(this BergleContext db)
         {
             var martinFowler = new Autor { Nome = "Martin Fowler" };
             var isaacAsimov = new Autor { Nome = "Isaac Asimov" };

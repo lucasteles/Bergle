@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bergle.Data
 {
-    public class AppContext : DbContext
+    public class BergleContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

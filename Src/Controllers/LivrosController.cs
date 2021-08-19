@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Bergle.Data;
 using Bergle.Domain;
@@ -11,24 +12,22 @@ namespace Bergle.Controllers
     [Route("[controller]")]
     public class LivrosController : ControllerBase
     {
-        private AppContext context;
+        private BergleContext context;
 
         public LivrosController()
         {
-            context = new AppContext();
+            context = new BergleContext();
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Livro>> ObterTodos()
+        public ActionResult<List<Livro>> ObterTodos()
         {
             var livros = context.Livros
-                .AsNoTracking()
-                .Include(l => l.Autores)
-                .Include(l => l.Categorias)
-                .Include(l => l.Leitores)
-                .Include(l => l.Reviews)
-                .ToList();
-            return Ok(livros);
+                .AsNoTracking();
+
+            Console.WriteLine(livros.ToQueryString());
+            
+            return Ok(livros.ToList());
         }
     }
 }
