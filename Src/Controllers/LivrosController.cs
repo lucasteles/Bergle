@@ -23,7 +23,8 @@ namespace Bergle.Controllers
         public ActionResult<List<Livro>> ObterTodos()
         {
             var livros = context.Livros
-                .AsNoTracking();
+                .AsNoTrackingWithIdentityResolution()
+                .Include(l => l.Autores);
 
             Console.WriteLine(livros.ToQueryString());
             

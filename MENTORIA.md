@@ -1,6 +1,6 @@
 # Mentoria
 
-# 00 - 17/08/2021
+# 00 - 19/08/2021
 
 - Como é a evolução na carreira?
     - Estagiário, Júnior, Pleno, Sênior, Arquiteto?
@@ -27,6 +27,6 @@
     - Testes?
         - Dos 3 tipos?
 
-# 01 - 19/08/2021
+# 01 - 24/08/2021
 
-
+- 

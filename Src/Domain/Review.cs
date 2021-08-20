@@ -1,13 +1,51 @@
+using System;
+using System.Collections.Generic;
+
 namespace Bergle.Domain
 {
     public class Review
     {
         public int Id { get; set; }
 
-        public Leitor Leitor { get; set; }  // Cada leitor pode fazer no máximo 1 review / livro
+        public Livro Livro { get; set; }
 
-        public byte Avaliacao { get; set; }  // Min 1 | Máx 5 estrelas
+        public Leitor Leitor { get; set; }
 
-        public string Descricao { get; set; }  // Min 10 | Máx 1000 caracteres
+        public byte Avaliacao { get; set; }
+
+        public string Descricao { get; set; }
+
+        public HashSet<Leitor> Apoiadores { get; set; }
+
+        public DateTime Data { get; set; }
+
+        public Review() {}
+
+        public Review(
+            Livro livro,
+            Leitor leitor,
+            byte avaliacao,
+            string descricao
+        ) {
+            if (leitor.JahLeu(livro) && livro.AindaNaoFoiAvaliadoPelo(leitor))
+            {
+                if (1 <= avaliacao && avaliacao <= 5)
+                {
+                    Avaliacao = avaliacao;
+                }
+
+                if (10 <= descricao.Length && descricao.Length <= 1_000)
+                {
+                    Descricao = descricao;
+                }
+
+                Data = DateTime.Now;
+            }
+        }
+
+        public void Adicionar(Leitor apoiador)
+        {
+            Apoiadores.Add(apoiador);
+        }
     }
 }

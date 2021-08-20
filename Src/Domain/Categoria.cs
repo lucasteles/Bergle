@@ -7,7 +7,9 @@ namespace Bergle.Domain
         public int Id { get; set; }
 
         public string Nome { get; set; }
+        
+        public Leitor Leitor { get; set; }  // Conceito de Leitor Onisciente
 
-        public IList<Livro> Livros { get; set; }
+        public HashSet<Livro> Livros { get; set; }
     }
 }

@@ -13,10 +13,20 @@ namespace Bergle.Domain
 
         public IList<Autor> Autores { get; set; }
 
-        public IList<Categoria> Categorias { get; set; }
+        public HashSet<Categoria> Categorias { get; set; }
 
         public IList<Leitor> Leitores { get; set; }
 
         public IList<Review> Reviews { get; set; }
+
+        public bool AindaNaoFoiAvaliadoPelo(Leitor leitor)
+        {
+            return !Leitores.Contains(leitor);
+        }
+
+        public void Categorizar(Categoria categoria)
+        {
+            Categorias.Add(categoria);
+        }
     }
 }

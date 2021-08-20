@@ -64,7 +64,7 @@ namespace Bergle.Data
                     Titulo = "Fundação",
                     DataDePublicacao = new DateTime(1942, 1, 1),
                     Autores = new List<Autor>() { isaacAsimov },
-                    Categorias = new List<Categoria>() { ficcao, classico },
+                    Categorias = new HashSet<Categoria>() { ficcao, classico },
                     Leitores = new List<Leitor>() { sam, alice },
                     Reviews = new List<Review>() { fundacaoReview }
                 },
@@ -73,7 +73,7 @@ namespace Bergle.Data
                     Titulo = "Fundação e Império",
                     DataDePublicacao = new DateTime(1952, 1, 1),
                     Autores = new List<Autor>() {isaacAsimov},
-                    Categorias = new List<Categoria>() { ficcao },
+                    Categorias = new HashSet<Categoria>() { ficcao },
                     Leitores = new List<Leitor>() { sam }
                 },
                 new Livro
@@ -81,7 +81,7 @@ namespace Bergle.Data
                     Titulo = "Segunda Fundação",
                     DataDePublicacao = new DateTime(1953, 1, 1),
                     Autores = new List<Autor>() { isaacAsimov },
-                    Categorias = new List<Categoria>() { ficcao },
+                    Categorias = new HashSet<Categoria>() { ficcao },
                     Leitores = new List<Leitor>() { sam }
                 },
                 new Livro
@@ -89,7 +89,7 @@ namespace Bergle.Data
                     Titulo = "Patterns of Enterprise Application Architecture",
                     DataDePublicacao = new DateTime(2002, 11, 15),
                     Autores = new List<Autor>() { martinFowler },
-                    Categorias = new List<Categoria>() { software },
+                    Categorias = new HashSet<Categoria>() { software },
                     Leitores = new List<Leitor>() { alice, tyler },
                     Reviews = new List<Review>() { pOfEaaReview }
                 },
@@ -98,7 +98,7 @@ namespace Bergle.Data
                     Titulo = "The Mythical Man-Month",
                     DataDePublicacao = new DateTime(1975, 1, 1),
                     Autores = new List<Autor>() { frederickBrooks, martinFowler },
-                    Categorias = new List<Categoria>() { software, classico },
+                    Categorias = new HashSet<Categoria>() { software, classico },
                     Leitores = new List<Leitor>() { sam, tyler },
                     Reviews = new List<Review>() { tmmReview }
                 },
@@ -107,7 +107,7 @@ namespace Bergle.Data
                     Titulo = "A Metamorfose",
                     DataDePublicacao = new DateTime(1997, 1, 1),
                     Autores = new List<Autor>() { franzKafka },
-                    Categorias = new List<Categoria>() { novela, classico },
+                    Categorias = new HashSet<Categoria>() { novela, classico },
                     Leitores = new List<Leitor>() { alice }
                 }
             };
