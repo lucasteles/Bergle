@@ -6,17 +6,26 @@ namespace Bergle.Domain
 {
     public class Leitor
     {
-        public int Id { get; set; }
+        public int Id { get; }
 
-        public string Nome { get; set; }
+        public string Nome { get; }
 
-        public HashSet<Livro> Estante { get; set; }
+        public HashSet<Livro> Estante { get; }
 
-        public HashSet<Categoria> Categorias { get; set; }  // Conceito de Leitor Onisciente
+        public HashSet<Categoria> Categorias { get; }  // Conceito de Leitor Onisciente
 
-        public HashSet<Review> Reviews { get; set; }
+        public HashSet<Review> Reviews { get; }
 
-        public HashSet<Review> Apoios { get; set; }
+        public HashSet<Review> Apoios { get; }
+
+        public Leitor(
+            string nome
+        ) {
+            Estante = new HashSet<Livro>();
+            Categorias = new HashSet<Categoria>();
+            Reviews = new HashSet<Review>();
+            Apoios = new HashSet<Review>();
+        }
 
         public bool JahLeu(Livro livro)
         {

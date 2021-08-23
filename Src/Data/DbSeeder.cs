@@ -32,9 +32,9 @@ namespace Bergle.Data
             var novela = new Categoria { Nome = "Novela" };
             var classico = new Categoria { Nome = "Clássico" };
 
-            var sam = new Leitor { Nome = "Sam" };
-            var alice = new Leitor { Nome = "Alice" };
-            var tyler = new Leitor { Nome = "Tyler" };
+            var sam = new Leitor("Sam" );
+            var alice = new Leitor("Alice");
+            var tyler = new Leitor("Tyler");
 
             var fundacaoReview = new Review
             {

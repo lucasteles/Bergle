@@ -1,3 +1,4 @@
+using Bergle.Domain;
 using NUnit.Framework;
 
 namespace Tests.Integration
@@ -12,7 +13,13 @@ namespace Tests.Integration
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var leitor = new Leitor("Zaqueu");
+
+            var livro = new Livro();
+
+            leitor.ColocarNaEstante(livro);
+
+            Assert.That(leitor.JahLeu(livro));
         }
     }
 }
