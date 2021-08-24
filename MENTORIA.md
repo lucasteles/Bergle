@@ -29,4 +29,17 @@
 
 # 01 - 24/08/2021
 
-- 
+- Como definir casos de uso / features?
+
+- Como testar?
+    - Como obter dados para os testes?
+    - Como subir o banco para testes de integração?
+    - Limpar o banco a cada teste e reusar?
+    - Testes lentos, o que fazer?
+
+- EF Core:
+    - Como funcionam as migrations?
+
+- Implemntar de ponta a ponta:
+    - Como Leitor, quero poder adicionar um Livro à minha Estante.
+    - Tbm posso Categorizar meus livros de maneira customizada.
