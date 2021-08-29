@@ -43,3 +43,9 @@
 - Implemntar de ponta a ponta:
     - Como Leitor, quero poder adicionar um Livro à minha Estante.
     - Tbm posso Categorizar meus livros de maneira customizada.
+
+
+
+# 02 - 26/08/2021
+
+

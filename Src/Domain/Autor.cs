@@ -8,6 +8,8 @@ namespace Bergle.Domain
 
         public string Nome { get; set; }
 
+        public string Biografia { get; set; }
+
         public HashSet<Livro> Livros { get; set; }
     }
 }

@@ -11,7 +11,9 @@ namespace Bergle.Domain
 
         public Leitor Leitor { get; set; }
 
-        public byte Avaliacao { get; set; }
+        public Avaliacao Avaliacao { get; set; }
+
+        public string Titulo { get; set; }
 
         public string Descricao { get; set; }
 
@@ -24,28 +26,31 @@ namespace Bergle.Domain
         public Review(
             Livro livro,
             Leitor leitor,
-            byte avaliacao,
+            Avaliacao avaliacao,
             string descricao
         ) {
-            if (leitor.JahLeu(livro) && livro.AindaNaoFoiAvaliadoPelo(leitor))
+            Avaliacao = avaliacao;
+
+            if (10 <= descricao.Length && descricao.Length <= 1_000)
             {
-                if (1 <= avaliacao && avaliacao <= 5)
-                {
-                    Avaliacao = avaliacao;
-                }
-
-                if (10 <= descricao.Length && descricao.Length <= 1_000)
-                {
-                    Descricao = descricao;
-                }
-
-                Data = DateTime.Now;
+                Descricao = descricao;
             }
+
+            Data = DateTime.Now;
         }
 
         public void Adicionar(Leitor apoiador)
         {
             Apoiadores.Add(apoiador);
         }
+    }
+
+    public enum Avaliacao
+    {
+        UmaEstrela = 1,
+        DuasEstrelas = 2,
+        TresEstrelas = 3,
+        QuatroEstrelas = 4,
+        CincoEstrelas = 5,
     }
 }

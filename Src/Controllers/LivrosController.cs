@@ -12,23 +12,25 @@ namespace Bergle.Controllers
     [Route("[controller]")]
     public class LivrosController : ControllerBase
     {
-        private BergleContext context;
+        private readonly BergleContext _context;
 
-        public LivrosController()
+        public LivrosController(BergleContext context)
         {
-            context = new BergleContext();
+            _context = context;
         }
 
         [HttpGet]
         public ActionResult<List<Livro>> ObterTodos()
         {
-            var livros = context.Livros
-                .AsNoTrackingWithIdentityResolution()
-                .Include(l => l.Autores);
+            var livros = _context.Livros
+                .Select(l => new {
+                    Id = l.Id,
+                    Titulo = l.Titulo,
+                    Ano = l.Ano}             
+                )
+                .ToList();
 
-            Console.WriteLine(livros.ToQueryString());
-            
-            return Ok(livros.ToList());
+            return Ok(livros);
         }
     }
 }
