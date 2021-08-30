@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Bergle.Domain;
 using FluentAssertions;
 using NUnit.Framework;
@@ -14,15 +15,16 @@ namespace Tests.Unit
         {
             // Arrange
             var livro = new Livro(
-                id: 42,
                 titulo: "O Guia do Mochileiro das Galáxias",
-                ano: 2020
+                ano: 2020,
+                autores: new HashSet<Autor>(),
+                leitores: new HashSet<Leitor>()
             );
 
             // Act
 
             // Assert
-            livro.Ano.Should().Be(6, "Porque o valor tá fora do range.");
+            livro.Ano.Should().Be(2020);
         }
     }
 }

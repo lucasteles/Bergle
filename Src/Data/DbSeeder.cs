@@ -8,9 +8,9 @@ namespace Bergle.Data
     {
         public static void AdicionarLivros(this BergleContext db)
         {
-            var isaacAsimov = new Autor { Nome = "Isaac Asimov" };
-            var frederickBrooks = new Autor { Nome = "Frederick Brooks" };
-            var franzKafka = new Autor { Nome = "Franz Kafka" };
+            var isaacAsimov = new Autor(nome: "Isaac Asimov");
+            var frederickBrooks = new Autor(nome: "Frederick Brooks");
+            var franzKafka = new Autor(nome: "Franz Kafka");
 
             var alice = new Leitor("Alice");
             var tyler = new Leitor("Tyler");
@@ -24,16 +24,16 @@ namespace Bergle.Data
                     leitores: new HashSet<Leitor>() { alice }
                 ),
                 new Livro(
-                    titulo: "The Mythical Man-Month",
-                    ano: 1975,
-                    autores: new HashSet<Autor>() { frederickBrooks },
-                    leitores: new HashSet<Leitor>() { alice, tyler }
-                ),
-                new Livro(
                     titulo: "A Metamorfose",
                     ano: 1997,
                     autores: new HashSet<Autor>() { franzKafka },
                     leitores: new HashSet<Leitor>() { tyler }
+                ),
+                new Livro(
+                    titulo: "The Mythical Man-Month",
+                    ano: 1975,
+                    autores: new HashSet<Autor>() { frederickBrooks },
+                    leitores: new HashSet<Leitor>() { alice, tyler }
                 )
             };
 

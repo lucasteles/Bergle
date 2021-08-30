@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Bergle.Domain
@@ -14,6 +15,16 @@ namespace Bergle.Domain
             string nome
         ) {
             Nome = nome;
+        }
+
+        public void ColocarNaEstante(Livro livro)
+        {
+            if (Estante is null)
+                Estante = new HashSet<Livro>();
+
+            Estante.Add(livro);
+
+            livro.AdicionarLeitor(this);
         }
     }
 }

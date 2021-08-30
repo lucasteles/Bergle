@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Bergle.Data;
 using Bergle.Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Bergle.Controllers
 {
@@ -20,7 +18,7 @@ namespace Bergle.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Livro>> ObterTodos()
+        public ActionResult ObterTodos()
         {
             var livros = _context.Livros
                 .Select(l => new {

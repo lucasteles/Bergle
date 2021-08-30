@@ -17,11 +17,23 @@ namespace Bergle.Domain
 
         public Capa Capa { get; private set; }
 
+        public Editora Editora { get; private set; }
+
         public HashSet<Autor> Autores { get; private set; }
 
         public HashSet<Leitor> Leitores { get; private set; }
 
         private Livro() {}
+
+        public Livro(
+            string titulo,
+            int ano,
+            Autor autor
+        ) {
+            Titulo = titulo;
+            SetarAno(ano);
+            Autores = new HashSet<Autor>() { autor };
+        }
 
         public Livro(
             string titulo,
@@ -41,6 +53,22 @@ namespace Bergle.Domain
                 Ano = ano;
             else
                 throw new Exception($"Ano ({ano}) inválido. Deve estar entre {AnoMin} e {AnoMax}.");
+        }
+
+        private void SetarEdicao(int edicao)
+        {
+            if (edicao >= 0)
+                Edicao = edicao;
+            else
+                throw new Exception($"Edição ({edicao}) inválida. Deve ser um inteiro positivo.");
+        }
+
+        public void AdicionarLeitor(Leitor leitor)
+        {
+            if (Leitores is null)
+                Leitores = new HashSet<Leitor>();
+
+            Leitores.Add(leitor);
         }
 
         public static readonly int AnoMin = 1445; 
