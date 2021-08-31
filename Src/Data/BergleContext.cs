@@ -12,6 +12,10 @@ namespace Bergle.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("bergle");
+
+
+
             // Livro
             modelBuilder.Entity<Livro>().HasKey(l => l.Id);
             modelBuilder.Entity<Livro>().Property(l => l.Titulo).IsRequired();
@@ -29,6 +33,8 @@ namespace Bergle.Data
             // Leitor
             modelBuilder.Entity<Leitor>().HasKey(x => x.Id);
             modelBuilder.Entity<Leitor>().Property(x => x.Nome).IsRequired();
+
+
 
             // Relacionamento Many-to-Many entre Livro e Autor
             modelBuilder.Entity<Livro>()
@@ -50,6 +56,8 @@ namespace Bergle.Data
                     configureLeft: b => b.HasOne<Livro>().WithMany().HasForeignKey("LivroId")
             );
 
+
+
             // Editora
             modelBuilder.Entity<Editora>().ToTable("editoras");
             modelBuilder.Entity<Editora>().HasKey(x => x.Id);
@@ -59,6 +67,8 @@ namespace Bergle.Data
             modelBuilder.Entity<Editora>()
                 .HasMany<Livro>(e => e.Publicacoes)
                 .WithOne(l => l.Editora);
+
+
 
             // Biografia
             modelBuilder.Entity<Biografia>().ToTable("biografias");
@@ -70,6 +80,32 @@ namespace Bergle.Data
                 .HasOne(a => a.Biografia)
                 .WithOne(b => b.Autor)
                 .HasForeignKey<Biografia>(b => b.AutorId);
+
+
+
+            // Categoria
+            modelBuilder.Entity<Categoria>().ToTable("categorias");
+            modelBuilder.Entity<Categoria>().HasKey(x => x.CriadorId);
+            modelBuilder.Entity<Categoria>().Property(x => x.Nome).IsRequired();
+
+            // Relacionamento Many-to-Many entre Livro e Categoria
+            modelBuilder.Entity<Livro>()
+                .HasMany<Categoria>(l => l.Categorias)
+                .WithMany(c => c.Livros)
+                .UsingEntity<Dictionary<string, object>>(
+                    joinEntityName: "Categorizacoes",
+                    configureRight: b => b.HasOne<Categoria>().WithMany().HasForeignKey("CategoriaId"),
+                    configureLeft: b => b.HasOne<Livro>().WithMany().HasForeignKey("LivroId")
+            );
+
+            // Relacionamento One-to-Many entre Leitor e Categoria
+            modelBuilder.Entity<Leitor>()
+                .HasMany<Categoria>(l => l.Categorias)
+                .WithOne(c => c.Criador)
+                .HasForeignKey(x => x.CriadorId);
+
+
+            
         }
 
         public DbSet<Livro> Livros { get; set; }
@@ -77,5 +113,11 @@ namespace Bergle.Data
         public DbSet<Autor> Autores { get; set; }
 
         public DbSet<Leitor> Leitores { get; set; }
+
+        public DbSet<Categoria> Categorias { get; set; }
+
+        public DbSet<Editora> Editoras { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
     }
 }

@@ -65,8 +65,6 @@ O **ISBN** é um sistema internacional de identificação de livros e softwares 
 - [Traça](https://www.traca.com.br/)
 - [Livraria Cultura](https://www3.livrariacultura.com.br/)
 - [Travessa](https://www.travessa.com.br/)
-- []()
-- []()
 
 ## Referências
 - [Curso de Modelagem de Dados - Bóson Treinamentos](https://www.youtube.com/playlist?list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD)

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Bergle.Domain
@@ -10,6 +9,8 @@ namespace Bergle.Domain
         public string Nome { get; private set; }
 
         public HashSet<Livro> Estante { get; private set; }
+
+        public HashSet<Categoria> Categorias { get; private set; }
 
         public Leitor(
             string nome

@@ -23,6 +23,10 @@ namespace Bergle.Domain
 
         public HashSet<Leitor> Leitores { get; private set; }
 
+        public HashSet<Categoria> Categorias { get; private set; }
+
+        public HashSet<Review> Reviews { get; private set; }
+
         private Livro() {}
 
         public Livro(
