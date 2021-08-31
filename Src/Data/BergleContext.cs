@@ -27,12 +27,12 @@ namespace Bergle.Data
             );
 
             // Autor
-            modelBuilder.Entity<Autor>().HasKey(x => x.Id);
-            modelBuilder.Entity<Autor>().Property(x => x.Nome).IsRequired();
+            modelBuilder.Entity<Autor>().HasKey(a => a.Id);
+            modelBuilder.Entity<Autor>().Property(a => a.Nome).IsRequired();
 
             // Leitor
-            modelBuilder.Entity<Leitor>().HasKey(x => x.Id);
-            modelBuilder.Entity<Leitor>().Property(x => x.Nome).IsRequired();
+            modelBuilder.Entity<Leitor>().HasKey(l => l.Id);
+            modelBuilder.Entity<Leitor>().Property(l => l.Nome).IsRequired();
 
 
 
@@ -60,8 +60,8 @@ namespace Bergle.Data
 
             // Editora
             modelBuilder.Entity<Editora>().ToTable("editoras");
-            modelBuilder.Entity<Editora>().HasKey(x => x.Id);
-            modelBuilder.Entity<Editora>().Property(x => x.Nome).IsRequired();
+            modelBuilder.Entity<Editora>().HasKey(e => e.Id);
+            modelBuilder.Entity<Editora>().Property(e => e.Nome).IsRequired();
 
             // Relacionamento One-to-Many entre Editora e Livro
             modelBuilder.Entity<Editora>()
@@ -72,8 +72,8 @@ namespace Bergle.Data
 
             // Biografia
             modelBuilder.Entity<Biografia>().ToTable("biografias");
-            modelBuilder.Entity<Biografia>().HasKey(x => x.AutorId);
-            modelBuilder.Entity<Biografia>().Property(x => x.Descricao).IsRequired();
+            modelBuilder.Entity<Biografia>().HasKey(b => b.AutorId);
+            modelBuilder.Entity<Biografia>().Property(b => b.Descricao).IsRequired();
 
             // Relacionamento One-to-One entre Autor e Biografia
             modelBuilder.Entity<Autor>()
@@ -85,8 +85,8 @@ namespace Bergle.Data
 
             // Categoria
             modelBuilder.Entity<Categoria>().ToTable("categorias");
-            modelBuilder.Entity<Categoria>().HasKey(x => x.CriadorId);
-            modelBuilder.Entity<Categoria>().Property(x => x.Nome).IsRequired();
+            modelBuilder.Entity<Categoria>().HasKey(c => c.Id);
+            modelBuilder.Entity<Categoria>().Property(c => c.Nome).IsRequired();
 
             // Relacionamento Many-to-Many entre Livro e Categoria
             modelBuilder.Entity<Livro>()
@@ -98,14 +98,59 @@ namespace Bergle.Data
                     configureLeft: b => b.HasOne<Livro>().WithMany().HasForeignKey("LivroId")
             );
 
-            // Relacionamento One-to-Many entre Leitor e Categoria
+
+
+            // Subcategoria
+            modelBuilder.Entity<Subcategoria>().ToTable("subcategorias");
+            modelBuilder.Entity<Subcategoria>().HasKey(s => s.Id);
+            modelBuilder.Entity<Subcategoria>().Property(s => s.Nome).IsRequired();
+
+            // Relacionamento Many-to-Many entre Livro e Subcategoria
+            modelBuilder.Entity<Livro>()
+                .HasMany<Subcategoria>(l => l.Subcategorias)
+                .WithMany(s => s.Livros)
+                .UsingEntity<Dictionary<string, object>>(
+                    joinEntityName: "Subcategorizacoes",
+                    configureRight: b => b.HasOne<Subcategoria>().WithMany().HasForeignKey("SubcategoriaId"),
+                    configureLeft: b => b.HasOne<Livro>().WithMany().HasForeignKey("LivroId")
+            );
+
+            // Relacionamento One-to-Many entre Leitor e Subcategoria
             modelBuilder.Entity<Leitor>()
-                .HasMany<Categoria>(l => l.Categorias)
-                .WithOne(c => c.Criador)
-                .HasForeignKey(x => x.CriadorId);
+                .HasMany<Subcategoria>(l => l.Subcategorias)
+                .WithOne(s => s.Criador);
 
 
-            
+
+            // Review
+            modelBuilder.Entity<Review>().HasKey(r => r.Id);
+            modelBuilder.Entity<Review>().Property(r => r.Titulo).IsRequired();
+            modelBuilder.Entity<Review>().Property(r => r.Descricao).IsRequired();
+            modelBuilder.Entity<Review>().Property(r => r.Avaliacao).HasColumnType("smallint");
+
+            modelBuilder.Entity<Review>(r => r
+                .HasCheckConstraint("a_avaliacao_deve_estar_dentro_do_range", $"avaliacao >= 1 AND avaliacao <= 5")
+            );
+
+            // Relacionamento One-to-Many entre Leitor e Review 
+            modelBuilder.Entity<Leitor>()
+                .HasMany<Review>(l => l.Reviews)
+                .WithOne(r => r.Reviewer);
+
+            // Relacionamento One-to-Many entre Livro e Review 
+            modelBuilder.Entity<Livro>()
+                .HasMany<Review>(l => l.Reviews)
+                .WithOne(r => r.Livro);
+
+            // Relacionamento Many-to-Many entre Leitor e Review
+            modelBuilder.Entity<Leitor>()
+                .HasMany<Review>(l => l.Apoios)
+                .WithMany(r => r.Apoiadores)
+                .UsingEntity<Dictionary<string, object>>(
+                    joinEntityName: "Apoiamentos",
+                    configureRight: b => b.HasOne<Review>().WithMany().HasForeignKey("ReviewId"),
+                    configureLeft: b => b.HasOne<Leitor>().WithMany().HasForeignKey("ApoiadorId")
+            );
         }
 
         public DbSet<Livro> Livros { get; set; }

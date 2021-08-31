@@ -25,6 +25,8 @@ namespace Bergle.Domain
 
         public HashSet<Categoria> Categorias { get; private set; }
 
+        public HashSet<Subcategoria> Subcategorias { get; private set; }
+
         public HashSet<Review> Reviews { get; private set; }
 
         private Livro() {}

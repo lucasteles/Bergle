@@ -10,7 +10,11 @@ namespace Bergle.Domain
 
         public HashSet<Livro> Estante { get; private set; }
 
-        public HashSet<Categoria> Categorias { get; private set; }
+        public HashSet<Subcategoria> Subcategorias { get; private set; }
+
+        public HashSet<Review> Reviews { get; private set; }
+
+        public HashSet<Review> Apoios { get; private set; }
 
         public Leitor(
             string nome

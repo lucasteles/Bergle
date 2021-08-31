@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Bergle.Domain;
 
 namespace Bergle.Data
@@ -37,7 +38,16 @@ namespace Bergle.Data
                 )
             };
 
+            var review = new Review(
+                livro: livros.First(),
+                reviewer: alice,
+                titulo: "Título da review",
+                descricao: "Descrição da review",
+                avaliacao: 5
+            );
+
             db.Livros.AddRange(livros);
+            db.Reviews.Add(review);
             db.SaveChanges();
             Console.WriteLine("Livros adicionados");
         }
