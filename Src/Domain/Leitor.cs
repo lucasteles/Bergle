@@ -16,6 +16,8 @@ namespace Bergle.Domain
 
         public HashSet<Review> Apoios { get; private set; }
 
+        public HashSet<Clube> Clubes { get; set; }
+
         public Leitor(
             string nome
         ) {

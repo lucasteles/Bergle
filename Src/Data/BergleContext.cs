@@ -20,10 +20,12 @@ namespace Bergle.Data
             modelBuilder.Entity<Livro>().HasKey(l => l.Id);
             modelBuilder.Entity<Livro>().Property(l => l.Titulo).IsRequired();
             modelBuilder.Entity<Livro>().Property(l => l.Ano).IsRequired();
+            modelBuilder.Entity<Livro>().Property(l => l.Edicao).HasDefaultValue(null);
+            modelBuilder.Entity<Livro>().Property(l => l.Capa).HasDefaultValue(null);
 
             modelBuilder.Entity<Livro>(l => l
                 .HasCheckConstraint("o_ano_deve_estar_dentro_do_range", $"ano >= {Livro.AnoMin} AND ano <= {Livro.AnoMax}")
-                .HasCheckConstraint("a_edicao_deve_ser_um_inteiro_positivo", "edicao >= 0")
+                .HasCheckConstraint("a_edicao_deve_ser_um_inteiro_positivo", "edicao > 0")
             );
 
             // Autor
@@ -151,6 +153,23 @@ namespace Bergle.Data
                     configureRight: b => b.HasOne<Review>().WithMany().HasForeignKey("ReviewId"),
                     configureLeft: b => b.HasOne<Leitor>().WithMany().HasForeignKey("ApoiadorId")
             );
+
+
+
+            // Clube
+            modelBuilder.Entity<Clube>().HasKey(c => c.Id);
+            modelBuilder.Entity<Clube>().Property(c => c.Nome).IsRequired();
+            modelBuilder.Entity<Clube>().Property(c => c.Descricao).IsRequired();
+
+            // Relacionamento Many-to-Many entre Clube e Leitor
+            modelBuilder.Entity<Clube>()
+                .HasMany<Leitor>(c => c.Membros)
+                .WithMany(l => l.Clubes)
+                .UsingEntity<Dictionary<string, object>>(
+                    joinEntityName: "Membros",
+                    configureRight: b => b.HasOne<Leitor>().WithMany().HasForeignKey("LeitorId"),
+                    configureLeft: b => b.HasOne<Clube>().WithMany().HasForeignKey("ClubeId")
+            );
         }
 
         public DbSet<Livro> Livros { get; set; }
@@ -160,6 +179,8 @@ namespace Bergle.Data
         public DbSet<Leitor> Leitores { get; set; }
 
         public DbSet<Categoria> Categorias { get; set; }
+
+        public DbSet<Subcategoria> Subcategorias { get; set; }
 
         public DbSet<Editora> Editoras { get; set; }
 

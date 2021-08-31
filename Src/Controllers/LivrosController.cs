@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Bergle.Data;
-using Bergle.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bergle.Controllers
@@ -20,11 +18,14 @@ namespace Bergle.Controllers
         [HttpGet]
         public ActionResult ObterTodos()
         {
+            // Colocar todas as consultas organizadas aqui
+
             var livros = _context.Livros
                 .Select(l => new {
                     Id = l.Id,
                     Titulo = l.Titulo,
-                    Ano = l.Ano}             
+                    Ano = l.Ano,
+                    Capa = l.Capa}             
                 )
                 .ToList();
 

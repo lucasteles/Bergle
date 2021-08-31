@@ -11,11 +11,11 @@ namespace Bergle.Domain
 
         public string Sinopse { get; private set; }
 
-        public int Edicao { get; private set; }
+        public int? Edicao { get; private set; }
 
         public int Ano { get; private set; }
 
-        public Capa Capa { get; private set; }
+        public Capa? Capa { get; private set; }
 
         public Editora Editora { get; private set; }
 
@@ -63,7 +63,7 @@ namespace Bergle.Domain
 
         private void SetarEdicao(int edicao)
         {
-            if (edicao >= 0)
+            if (edicao > 0)
                 Edicao = edicao;
             else
                 throw new Exception($"Edição ({edicao}) inválida. Deve ser um inteiro positivo.");
