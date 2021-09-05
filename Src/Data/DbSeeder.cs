@@ -7,7 +7,7 @@ namespace Bergle.Data
 {
     public static class DbSeeder
     {
-        public static void AdicionarLivros(this BergleContext db)
+        public static void Seed(this BergleContext db)
         {
             var isaacAsimov = new Autor(nome: "Isaac Asimov");
             var frederickBrooks = new Autor(nome: "Frederick Brooks");

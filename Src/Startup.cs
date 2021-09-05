@@ -47,10 +47,6 @@ namespace Bergle
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Src v1"));
-
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
-                DbSeeder.AdicionarLivros(context);
             }
 
             app.UseHttpsRedirection();
@@ -63,6 +59,10 @@ namespace Bergle
             {
                 endpoints.MapControllers();
             });
+
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+            DbSeeder.Seed(context);
         }
     }
 }
