@@ -19,9 +19,9 @@ namespace Bergle.Data
             // Livro
             modelBuilder.Entity<Livro>().HasKey(l => l.Id);
             modelBuilder.Entity<Livro>().Property(l => l.Titulo).IsRequired();
-            modelBuilder.Entity<Livro>().Property(l => l.Ano).IsRequired();
-            modelBuilder.Entity<Livro>().Property(l => l.Edicao).HasDefaultValue(null);
-            modelBuilder.Entity<Livro>().Property(l => l.Capa).HasDefaultValue(null);
+            modelBuilder.Entity<Livro>().Property(l => l.Ano).IsRequired().HasColumnType("smallint");
+            modelBuilder.Entity<Livro>().Property(l => l.Edicao).HasDefaultValue(null).HasColumnType("smallint");
+            modelBuilder.Entity<Livro>().Property(l => l.Capa).HasDefaultValue(null).HasColumnType("smallint");
 
             modelBuilder.Entity<Livro>(l => l
                 .HasCheckConstraint("o_ano_deve_estar_dentro_do_range", $"ano >= {Livro.AnoMin} AND ano <= {Livro.AnoMax}")
@@ -76,6 +76,7 @@ namespace Bergle.Data
             modelBuilder.Entity<Biografia>().ToTable("biografias");
             modelBuilder.Entity<Biografia>().HasKey(b => b.AutorId);
             modelBuilder.Entity<Biografia>().Property(b => b.Descricao).IsRequired();
+            modelBuilder.Entity<Biografia>().Property(b => b.Falecimento).HasDefaultValue(null);
 
             // Relacionamento One-to-One entre Autor e Biografia
             modelBuilder.Entity<Autor>()
@@ -157,6 +158,7 @@ namespace Bergle.Data
 
 
             // Clube
+            modelBuilder.Entity<Clube>().ToTable("clubes");
             modelBuilder.Entity<Clube>().HasKey(c => c.Id);
             modelBuilder.Entity<Clube>().Property(c => c.Nome).IsRequired();
             modelBuilder.Entity<Clube>().Property(c => c.Descricao).IsRequired();
@@ -175,6 +177,8 @@ namespace Bergle.Data
         public DbSet<Livro> Livros { get; set; }
 
         public DbSet<Autor> Autores { get; set; }
+
+        public DbSet<Biografia> Biografias { get; set; }
 
         public DbSet<Leitor> Leitores { get; set; }
 

@@ -53,6 +53,24 @@ namespace Bergle.Domain
             Leitores = leitores;
         }
 
+        public Livro(
+            string titulo,
+            int ano,
+            Capa capa,
+            int edicao,
+            HashSet<Autor> autores,
+            HashSet<Leitor> leitores,
+            string sinopse
+        ) {
+            Titulo = titulo;
+            SetarAno(ano);
+            Capa = capa;
+            SetarEdicao(edicao);
+            Autores = autores;
+            Leitores = leitores;
+            Sinopse = sinopse;
+        }
+
         private void SetarAno(int ano)
         {
             if (ano >= AnoMin && ano <= AnoMax)

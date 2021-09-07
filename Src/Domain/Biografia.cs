@@ -12,6 +12,6 @@ namespace Bergle.Domain
 
         public DateTime Nascimento { get; set; }
 
-        public DateTime Falecimento { get; set; }
+        public DateTime? Falecimento { get; set; }
     }
 }
