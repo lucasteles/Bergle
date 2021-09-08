@@ -46,6 +46,8 @@ namespace Bergle.Domain
 
         public void Adicionar(Leitor apoiador)
         {
+            if (Apoiadores is null)
+                Apoiadores = new HashSet<Leitor>();
             Apoiadores.Add(apoiador);
         }
 

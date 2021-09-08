@@ -94,12 +94,14 @@ namespace Bergle.Data
                 ),
             };
 
+            // Editoras
             var editora = new Editora
             {
                 Nome = "Editora IDE",
                 Publicacoes = new HashSet<Livro>( livros )
             };
 
+            // Categorias
             var categorias = new HashSet<Categoria>
             {
                 new Categoria()
@@ -114,6 +116,7 @@ namespace Bergle.Data
                 }
             };
 
+            // Reviews e apoios
             var reviews = new List<Review>
             {
                 new Review(
@@ -125,15 +128,34 @@ namespace Bergle.Data
                 )
             };
 
+            reviews[0].Adicionar(ze);
+
+            // Subcategorias
+            var subcategoria = new Subcategoria
+            {
+                Nome = "Clássicos",
+                Criador = alice,
+                Livros = new HashSet<Livro>{ livros[3] }
+            };
+
+            // Clubes
+            var clube = new Clube
+            {
+                Nome = "Finer Things Club",
+                Descricao = "Is “the most exclusive club” at Dunder Mifflin’s Scranton branch. The members met monthly in the break room to discuss books, art and culture “in a very civilized way.” The rules, according to member Pam Beesly are that: “there is no paper, no plastic and no work talk allowed.”",
+                Membros = new HashSet<Leitor>{ alice, eloa, ze }
+            };
 
             db.Livros.AddRange(livros);
             db.Editoras.AddRange(editora);
             db.Categorias.AddRange(categorias);
+            db.Subcategorias.AddRange(subcategoria);
             db.Reviews.AddRange(reviews);
             db.Biografias.AddRange(asimovBiografia, brooksBiografia, fowlerBiografia);
+            db.Clubes.AddRange(clube);
 
             db.SaveChanges();
-            Console.WriteLine("Livros adicionados");
+            Console.WriteLine("Dados adicionados com sucesso...");
         }
     }
 }

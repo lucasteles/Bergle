@@ -189,5 +189,7 @@ namespace Bergle.Data
         public DbSet<Editora> Editoras { get; set; }
 
         public DbSet<Review> Reviews { get; set; }
+
+        public DbSet<Clube> Clubes { get; set; }
     }
 }
