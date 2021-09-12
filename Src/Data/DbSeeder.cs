@@ -125,6 +125,13 @@ namespace Bergle.Data
                     titulo: "Não passei da segunda parte",
                     descricao: "A primeira parte é muito boa, com personagens cheios de conteúdo. Uma pena eles serem descartados logo em seguida.",
                     avaliacao: 3
+                ),
+                new Review(
+                    livro: livros[0],
+                    reviewer: joao,
+                    titulo: "Muito bom",
+                    descricao: "Bom dimais...",
+                    avaliacao: 5
                 )
             };
 

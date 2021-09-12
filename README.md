@@ -43,8 +43,6 @@ Cada **Avaliação** é *composta* por uma **Nota** (de 1 a 5 estrelas) e por um
 
 O **ISBN** é um sistema internacional de identificação de livros e softwares que utiliza números para classificá-los por **Título**, **Autor**, **País**, **Editora** e **Edição**.
 
-
-
 ## 4 - Consultas básicas
 
 - Qual a avaliação média de um determinado livro?

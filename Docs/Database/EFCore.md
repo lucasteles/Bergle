@@ -1,12 +1,10 @@
 # Entity Framework Core in Action
 
-É um ORM completo, desenvolvido pela Microsoft.
-
 ## Part 1 - Getting Started
 
 ## 1 - Introduction to EF Core
 
-Tabelas <=> LINQ + EF Core + SQL <=> Objetos
+Tabelas <=> EF Core <=> Objetos
 
 ## 2 - Querying the database
 
@@ -72,17 +70,47 @@ Tabelas <=> LINQ + EF Core + SQL <=> Objetos
 
 ## Part 2 - EF in Depth
 
+## 7 - Configuring nonrelational properties
 
-## 6 - 
+- Configurações:
+    - Convenções: default do EF para mapeamentos, nomes, tipos, conversões...
+    - Data Annotations: anotações logo acima das propriedades
+    - Fluent API: permite configurar praticamente qualquer coisa
 
-## 7 - 
+- Global Query Filters: (CHAPTER 6.1.6)
+    - Multitenant applications
+    - Soft-delete feature
+
+## 8 - Configuring relationships
+
+- Convenções:
+- Data Annotations:
+- Fluent API:
+- 5 outros jeitos:
+
+## 9 - Handling database migrations
+
+- Como mudar a estrutura do banco usando migrations:
+    - Criação:
+    - Aplicação:
+
+
+
+## 10 - Configuring advanced features and handling concurrency conflicts
+
+- Funções:
+    - Dá pra criar funções no banco e executar elas via EF Core
+
+- Colunas com valores default e computados:
+    - Não dá pra usar dados de outras tabelas
+
+- Conflitos de concorrência:
+    - Concurrency token
+    - Timestamp
+
+## 11 - Going deeper into the DbContext
 
 ## Part 3 - Using EF Core in Real-World Apps
-
-## 10 - 
-
-## 11 - 
-
 
 ## 12 - 
 

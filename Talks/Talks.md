@@ -6,8 +6,7 @@
 	- PostgreSQL <=> EF Core <=> C#
 
 ## 1 - Por quê usar?
-	- Ao abstrair o banco de dados, o desenvolvimento é facilitado.
-	- Não é necessário ficar mantendo um monte de SQL.
+	- Não é necessário ficar mantendo um monte de SQL, facilitando o desenvolvimento.
 	- Nos dá várias features:
 		- Criar e manter schemas alinhados com o código e suas mudanças.
 		- Geração e execução de SQL.
@@ -85,6 +84,7 @@
 ## 8 - Configuration
 	- Permite sobescrever o comportamento padrão do EF (Conventions).
 	- Pode ser feita via [Attributes] ou via Fluent().API().
+	- 
 
 ## 9 - Fluent API
 	- OnModelCreating(ModelBuilder modelBuilder):
