@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Bergle.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,9 +18,14 @@ namespace Bergle.Controllers
         }
 
         [HttpGet]
-        public ActionResult ObterTodos()
+        public async Task<ActionResult> ObterTodos()
         {
             // Colocar todas as consultas organizadas aqui
+            var livros2 =
+                await _context
+                    .Livros
+                    .Include(x => x.Autores)
+                    .ToListAsync();
 
             var livros = _context.Livros.ToList();
             var autores = _context.Autores.ToList();
@@ -31,7 +37,6 @@ namespace Bergle.Controllers
             var reviews = _context.Reviews.ToList();
 
             var clube = _context.Clubes.Include(x => x.Membros).First();
-
             var livrosDto = _context.Livros.Select(x => new {
                     Id = x.Id,
                     Titulo = x.Titulo,

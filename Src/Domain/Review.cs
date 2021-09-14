@@ -34,9 +34,13 @@ namespace Bergle.Domain
             Reviewer = reviewer;
             Titulo = titulo;
 
-            if (10 <= descricao.Length && descricao.Length <= 1_000)
+            if (descricao.Length is >= 10 and <= 1_000)
             {
                 Descricao = descricao;
+            }
+            else
+            {
+                throw new Exception($"Descricao vazia...");
             }
 
             SetarAvaliacao(avaliacao);

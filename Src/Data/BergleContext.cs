@@ -14,14 +14,16 @@ namespace Bergle.Data
         {
             modelBuilder.HasDefaultSchema("bergle");
 
-
-
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
             // Livro
-            modelBuilder.Entity<Livro>().HasKey(l => l.Id);
-            modelBuilder.Entity<Livro>().Property(l => l.Titulo).IsRequired();
-            modelBuilder.Entity<Livro>().Property(l => l.Ano).IsRequired().HasColumnType("smallint");
-            modelBuilder.Entity<Livro>().Property(l => l.Edicao).HasDefaultValue(null).HasColumnType("smallint");
-            modelBuilder.Entity<Livro>().Property(l => l.Capa).HasDefaultValue(null).HasColumnType("smallint");
+            /*
+            var livro = modelBuilder.Entity<Livro>();
+            livro.HasKey(l => l.Id);
+            livro.Property(l => l.Titulo).IsRequired();
+            livro.Property(l => l.Ano).IsRequired().HasColumnType("smallint");
+            livro.Property(l => l.Edicao).HasDefaultValue(null).HasColumnType("smallint");
+            livro.Property(l => l.Capa).HasDefaultValue(null).HasColumnType("smallint");
+            */
 
             modelBuilder.Entity<Livro>(l => l
                 .HasCheckConstraint("o_ano_deve_estar_dentro_do_range", $"ano >= {Livro.AnoMin} AND ano <= {Livro.AnoMax}")
