@@ -112,8 +112,15 @@ Tabelas <=> EF Core <=> Objetos
 
 ## Part 3 - Using EF Core in Real-World Apps
 
-## 12 - 
+## 12 - Using entity events to solve business problems
 
+- Tipos de eventos
+
+- Eventos de domínio
+
+- Eventos de integração
+
+- Event Runner
 
 ## 13 - 
 

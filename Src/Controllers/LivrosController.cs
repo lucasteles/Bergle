@@ -32,7 +32,24 @@ namespace Bergle.Controllers
 
             var clube = _context.Clubes.Include(x => x.Membros).First();
 
-            return Ok();
+            var livrosDto = _context.Livros.Select(x => new {
+                    Id = x.Id,
+                    Titulo = x.Titulo,
+                    Editora = x.Editora.Nome,
+                    Autores = x.Autores.Select(a => a.Nome).ToList(),
+                    Categorias = x.Categorias.Select(c => c.Nome).ToList(),
+                    Reviews = x.Reviews.Select(r => new { 
+                        Reviewer = r.Reviewer.Nome,
+                        Titulo = r.Titulo,
+                        Descricao = r.Descricao,
+                        Avaliacao = r.Avaliacao,
+                        Data = r.Data,
+                        Likes = r.Apoiadores.Count
+                    }).ToList()
+                }
+            ).ToList();
+
+            return Ok(livrosDto);
         }
     }
 }

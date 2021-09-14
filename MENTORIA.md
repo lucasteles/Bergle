@@ -44,8 +44,18 @@
     - Como Leitor, quero poder adicionar um Livro à minha Estante.
     - Tbm posso Categorizar meus livros de maneira customizada.
 
+# 02 - 14/09/2021
 
+- Implementar as funcionalidades:
+    - Casdastrar um livro
+    - Vincular um livro à um leitor
+    - Vincular um livro à um autor
+    - Fazer um review de um livro
 
-# 02 - 26/08/2021
+- Como lidar com a referência circular do EF?
+    - Todos os objetos tão replicados em memória?
 
+- Como adicionar dados mais facilmente para testar a aplicação?
 
+- Como lidar com as migrations?
+    - Dá pra ficar criando e apagando o banco toda hora?
