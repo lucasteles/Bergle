@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Bergle.Data;
+using Bergle.Domain;
+using Bergle.Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +18,23 @@ namespace Bergle.Controllers
         public LivrosController(BergleContext context)
         {
             _context = context;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(LivroDTO dto)
+        {
+            var author = await _context.Autores.FindAsync(dto.AutorId);
+            if (author is null)
+                return BadRequest();
+
+           // if (dto.Ano is >= 1445 and <= 2021)
+           //   return BadRequest();
+
+            var livro = new Livro(dto.Titulo, dto.Ano, author);
+            _context.Livros.Add(livro);
+            await _context.SaveChangesAsync();
+
+            return Created("/", new { livro.Id});
         }
 
         [HttpGet]

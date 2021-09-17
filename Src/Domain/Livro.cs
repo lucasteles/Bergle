@@ -76,7 +76,7 @@ namespace Bergle.Domain
             if (ano >= AnoMin && ano <= AnoMax)
                 Ano = ano;
             else
-                throw new Exception($"Ano ({ano}) inválido. Deve estar entre {AnoMin} e {AnoMax}.");
+                throw new ExcecaoDeDominio($"Ano ({ano}) inválido. Deve estar entre {AnoMin} e {AnoMax}.");
         }
 
         private void SetarEdicao(int edicao)
@@ -84,7 +84,7 @@ namespace Bergle.Domain
             if (edicao > 0)
                 Edicao = edicao;
             else
-                throw new Exception($"Edição ({edicao}) inválida. Deve ser um inteiro positivo.");
+                throw new ExcecaoDeDominio($"Edição ({edicao}) inválida. Deve ser um inteiro positivo.");
         }
 
         public void AdicionarLeitor(Leitor leitor)

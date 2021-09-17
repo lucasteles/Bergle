@@ -1,3 +1,4 @@
+using Bergle.Controllers;
 using static System.Text.Json.Serialization.ReferenceHandler;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,7 +42,8 @@ namespace Bergle
             IApplicationBuilder app, 
             IWebHostEnvironment env,
             BergleContext context
-        ) {
+        )
+        {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -55,6 +57,7 @@ namespace Bergle
 
             app.UseAuthorization();
 
+            app.UseMiddleware<ExcecaoMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
